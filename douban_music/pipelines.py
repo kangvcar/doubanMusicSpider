@@ -40,7 +40,7 @@ class CsvExporterPipeline:
         self.writer = None
 
     def open_spider(self, spider):
-        self.file = open('output/music.csv', 'w', newline='', encoding='utf-8')
+        self.file = open('output/music_info.csv', 'w', newline='', encoding='utf-8')
         self.writer = csv.writer(self.file)
         # Write header
         self.writer.writerow(['music_id', 'title', 'performer', 'release_date', 'album_type', 'medium', 'genre', 'rating', 'rating_count', 'cover_link'])
@@ -60,7 +60,7 @@ class CsvCommentExporterPipeline:
         self.writer = None
 
     def open_spider(self, spider):
-        self.file = open('output/comments_output.csv', 'w', newline='', encoding='utf-8')
+        self.file = open('output/music_comment.csv', 'w', newline='', encoding='utf-8')
         self.writer = csv.writer(self.file)
         # Write header for comments
         self.writer.writerow(['music_title', 'username', 'rating', 'comment_time', 'useful_count', 'content'])
